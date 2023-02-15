@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="581.0" prefWidth="603.0" styleClass="generatorBackground" stylesheets="@../../../styles/qr-styles.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.demo.qrcodegeneratordemo.QRGeneratorController">
+   <children>
+      <HBox alignment="CENTER" layoutX="14.0" prefHeight="62.0" prefWidth="603.0" styleClass="header" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="FX QR Generator" textAlignment="CENTER">
+               <font>
+                  <Font name="Copperplate" size="22.0" />
+               </font>
+            </Text>
+         </children></HBox>
+      <VBox layoutX="36.0" layoutY="161.0" prefHeight="297.0" prefWidth="193.0">
+         <children>
+            <StackPane prefHeight="301.0" prefWidth="193.0">
+               <children>
+                  <VBox fx:id="contactVbox" layoutX="10.0" layoutY="10.0" prefHeight="302.0" prefWidth="193.0" spacing="15.0" visible="false">
+                     <children>
+                        <TextField fx:id="nameTF" prefHeight="41.0" prefWidth="193.0" promptText="   Name:" styleClass="text-fieldFormat">
+                           <VBox.margin>
+                              <Insets top="10.0" />
+                           </VBox.margin>
+                        </TextField>
+                        <TextField fx:id="addressTF" prefHeight="41.0" prefWidth="193.0" promptText="Address" styleClass="text-fieldFormat" />
+                        <TextField fx:id="cityTF" prefHeight="41.0" prefWidth="193.0" promptText=" City:" styleClass="text-fieldFormat" />
+                        <TextField fx:id="stateTF" prefHeight="41.0" prefWidth="193.0" promptText="State:" styleClass="text-fieldFormat" />
+                        <TextField fx:id="zipcodeTF" prefHeight="41.0" prefWidth="193.0" promptText="Zipcode:" styleClass="text-fieldFormat" />
+                     </children>
+                  </VBox>
+                  <VBox fx:id="phoneVbox" alignment="CENTER" prefHeight="200.0" prefWidth="100.0" visible="false">
+                     <children>
+                        <TextField fx:id="phoneTF" prefHeight="41.0" prefWidth="193.0" promptText=" Phone Number:" styleClass="text-fieldFormat" />
+                        <Region prefHeight="140.0" prefWidth="193.0" />
+                     </children>
+                  </VBox>
+                  <VBox fx:id="emailVbox" prefHeight="302.0" prefWidth="193.0" stylesheets="@../../../styles/qr-styles.css" visible="false">
+                     <children>
+                        <Region prefHeight="87.0" prefWidth="193.0" />
+                        <TextField fx:id="emailTF" prefHeight="45.0" prefWidth="193.0" promptText="\@Email:" styleClass="text-fieldFormat" />
+                     </children>
+                  </VBox>
+               </children>
+            </StackPane>
+         </children>
+      </VBox>
+      <Label fx:id="userSelectionLabel" alignment="CENTER" layoutX="354.0" layoutY="89.0" prefHeight="41.0" prefWidth="193.0" styleClass="text-fieldFormat" textAlignment="CENTER" textFill="#8ae4ff" AnchorPane.topAnchor="89.0" />
+      <JFXComboBox fx:id="qrTypes" focusColor="#2d7bab" layoutX="36.0" layoutY="91.0" onMouseClicked="#attachComboBoxListener" prefHeight="37.0" prefWidth="193.0" promptText="     QR Types" styleClass="text-fieldFormat" />
+      <ImageView fx:id="finalQRImage" fitHeight="181.0" fitWidth="193.0" layoutX="354.0" layoutY="219.0" pickOnBounds="true" preserveRatio="true" />
+      <HBox alignment="CENTER_RIGHT" layoutX="36.0" layoutY="496.0" prefHeight="45.0" prefWidth="193.0">
+         <children>
+            <StackPane prefHeight="62.0" prefWidth="228.0">
+               <children>
+                  <JFXButton fx:id="contactBtn" buttonType="RAISED" onAction="#handleGenerateCustomerData" prefHeight="62.0" prefWidth="322.0" text="GENERATE CONTACT QR" textFill="WHITE" visible="false" />
+                  <JFXButton fx:id="phoneBtn" buttonType="RAISED" onAction="#handleGeneratePhoneData" prefHeight="62.0" prefWidth="315.0" text="GENERATE PHONE QR" textFill="WHITE" visible="false" />
+                  <JFXButton fx:id="emailBtn" buttonType="RAISED" onAction="#handleGenerateEmailData" prefHeight="62.0" prefWidth="309.0" text="GENERATE EMAIL QR" textFill="WHITE" visible="false" />
+               </children>
+            </StackPane>
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>

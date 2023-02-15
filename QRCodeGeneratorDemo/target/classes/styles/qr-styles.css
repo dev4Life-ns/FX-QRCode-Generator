@@ -1,0 +1,26 @@
+.generatorBackground{
+    -fx-background-image: url('../images/tech_background.jpg');
+    -fx-background-size: 100% 100%;
+    -fx-background-repeat: no-repeat;
+}
+
+.imageView-background{-fx-background-color: rgba(7, 26, 44, 0.55);}
+
+.header{-fx-background-color:#151c31;}
+
+
+.text-fieldFormat{
+    -fx-background-color: rgba(1, 20, 32, 0.94);
+   -fx-prompt-text-fill: white;
+    -fx-font-size: 14px;
+    -font-weight: 200;
+    -fx-text-fill: white;
+}
+
+.button{
+    -fx-background-color: #12baba;
+    -fx-fill-color: ghostwhite;
+    -fx-border-radius: none;
+   
+
+}
